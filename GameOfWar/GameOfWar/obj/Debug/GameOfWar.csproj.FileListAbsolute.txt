@@ -1,0 +1,5 @@
+C:\Users\Technologist\Documents\GitHub\GameOfWar\GameOfWar\GameOfWar\bin\Debug\GameOfWar.exe.config
+C:\Users\Technologist\Documents\GitHub\GameOfWar\GameOfWar\GameOfWar\bin\Debug\GameOfWar.exe
+C:\Users\Technologist\Documents\GitHub\GameOfWar\GameOfWar\GameOfWar\bin\Debug\GameOfWar.pdb
+C:\Users\Technologist\Documents\GitHub\GameOfWar\GameOfWar\GameOfWar\obj\Debug\GameOfWar.exe
+C:\Users\Technologist\Documents\GitHub\GameOfWar\GameOfWar\GameOfWar\obj\Debug\GameOfWar.pdb
