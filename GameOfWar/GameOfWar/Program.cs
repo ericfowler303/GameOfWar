@@ -12,6 +12,7 @@ namespace GameOfWar
         {
             Deck TheDeck = new Deck();
             TheDeck.Shuffle();
+            TheDeck.Shuffle();
 
             WarPlayer player1 = new WarPlayer();
             WarPlayer player2 = new WarPlayer();
@@ -63,7 +64,7 @@ namespace GameOfWar
                         player1.takeCard(item);
                     }
                     roundPot.Clear();
-                    DisplayRoundInfo("Player 1", player1, player2);
+                    DisplayRoundInfo("Player 1", player1, player2, player1Card, player2Card);
                 }
                 else if (player1Card.CompareTo(player2Card) == -1)
                 {
@@ -75,7 +76,7 @@ namespace GameOfWar
                         player2.takeCard(item);
                     }
                     roundPot.Clear();
-                    DisplayRoundInfo("Player 2", player1, player2);
+                    DisplayRoundInfo("Player 2", player1, player2, player1Card,player2Card);
                 }
                 else
                 {
@@ -104,9 +105,9 @@ namespace GameOfWar
 
         }
 
-        public static void DisplayRoundInfo(string roundWinner, WarPlayer p1, WarPlayer p2)
+        public static void DisplayRoundInfo(string roundWinner, WarPlayer p1, WarPlayer p2, Card p1c, Card p2c)
         {
-            Console.WriteLine("Round Ended, {0} won that round", roundWinner);
+            Console.WriteLine("Round Ended, {0} won that round. P1: {1}, P2: {2}", roundWinner,p1c,p2c);
             Console.WriteLine("Player 1 has {0} cards left, Player 2 has {1} cards left", p1.Hand.Count(), p2.Hand.Count());
             System.Threading.Thread.Sleep(1200);
         }
@@ -137,7 +138,7 @@ namespace GameOfWar
     class Card
     {
         public enum Rank { Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace }
-        public enum Suit { Hearts = 1, Spades, Dimonds, Clubs }
+        public enum Suit { Hearts, Spades, Dimonds, Clubs }
 
         public Rank MyRank { get; set; }
         public Suit MySuit { get; set; }
@@ -200,7 +201,7 @@ namespace GameOfWar
                 for (int j = 2; j < 15; j++)
                 {
                     // Add this new card to the deck
-                    unusedCards.Add(new Card(j, i));
+                    unusedCards.Add(new Card(i,j));
                 }
             }
         }
